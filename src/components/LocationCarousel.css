@@ -95,7 +95,7 @@
   font-size: clamp(2.25rem, 5.5vw, 4rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text);
+  color: var(--accent);
   text-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
   animation: title-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
 }
@@ -124,7 +124,7 @@
   position: absolute;
   width: 24px;
   height: 24px;
-  border: 1px solid var(--text-dim);
+  border: 1px solid var(--accent);
 }
 
 .corner-tl {
@@ -172,8 +172,8 @@
 }
 
 .carousel-arrow:hover {
-  color: var(--text);
-  border-color: var(--text-dim);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .carousel-actions {
@@ -198,8 +198,8 @@
 }
 
 .carousel-close:hover {
-  color: var(--text);
-  border-color: var(--text-dim);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 .explore-btn {
@@ -220,8 +220,9 @@
 }
 
 .explore-btn:hover {
-  border-color: var(--text-dim);
+  border-color: var(--accent);
   background: var(--bg-alt);
+  color: var(--accent);
 }
 
 @media (max-width: 700px) {

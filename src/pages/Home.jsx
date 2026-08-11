@@ -3,7 +3,7 @@ import LocationCarousel from '../components/LocationCarousel'
 import LocationList from '../components/LocationList'
 import './Home.css'
 
-function Home() {
+function Home({ introReady = true }) {
   const [focusedIndex, setFocusedIndex] = useState(null)
 
   const openLocation = (index) => {
@@ -25,7 +25,7 @@ function Home() {
   return (
     <section className="home">
       <aside className="sidebar-text">
-        <span>Photo Portfolio · 2026</span>
+        <span>WicilPhoto · 2026</span>
       </aside>
 
       <div className="home-inner">
@@ -39,7 +39,7 @@ function Home() {
         </div>
 
         {focusedIndex === null ? (
-          <LocationList onSelect={openLocation} />
+          <LocationList onSelect={openLocation} enabled={introReady} />
         ) : (
           <LocationCarousel
             initialIndex={focusedIndex}

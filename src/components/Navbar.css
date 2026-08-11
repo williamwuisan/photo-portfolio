@@ -11,11 +11,6 @@
 }
 
 .navbar .brand {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text);
   text-decoration: none;
 }
 
@@ -36,7 +31,7 @@
 
 .navbar nav a:hover,
 .navbar nav a.active {
-  color: var(--text);
+  color: var(--accent);
 }
 
 /* flip-text hover reveal */

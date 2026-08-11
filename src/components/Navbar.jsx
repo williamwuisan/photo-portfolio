@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import Logo from './Logo'
 import './Navbar.css'
 
 function FlipText({ text }) {
@@ -16,7 +17,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <NavLink to="/" className="brand">
-        <FlipText text="Portfolio" />
+        <Logo size="small" />
       </NavLink>
       <nav>
         <NavLink to="/" end>

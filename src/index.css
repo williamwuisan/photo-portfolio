@@ -1,11 +1,15 @@
 :root {
   --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --bg: #1a1618;
-  --bg-alt: #211c1f;
-  --text: #f2efe9;
-  --text-dim: rgba(242, 239, 233, 0.55);
-  --text-faint: rgba(242, 239, 233, 0.35);
-  --border: rgba(242, 239, 233, 0.12);
+  --bg: #0d1d1a;
+  --bg-alt: #142f2a;
+  --bg-alt-2: #103b20;
+  --text: #f3efe4;
+  --text-dim: rgba(243, 239, 228, 0.6);
+  --text-faint: rgba(243, 239, 228, 0.35);
+  --border: rgba(172, 139, 56, 0.25);
+  --accent: #ac8b38;
+  --accent-strong: #9e6328;
+  --pine: #255135;
 
   font: 16px/1.5 var(--sans);
   color: var(--text);

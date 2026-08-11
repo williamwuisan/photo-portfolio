@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 
-export function useReveal(options) {
+export function useReveal(enabled = true, options) {
   const ref = useRef(null)
   const [inView, setInView] = useState(false)
 
   useEffect(() => {
+    if (!enabled) return
     const node = ref.current
     if (!node) return
 
@@ -20,7 +21,7 @@ export function useReveal(options) {
 
     observer.observe(node)
     return () => observer.disconnect()
-  }, [options])
+  }, [enabled, options])
 
   return [ref, inView]
 }
