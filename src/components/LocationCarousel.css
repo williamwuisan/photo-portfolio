@@ -1,0 +1,218 @@
+.carousel-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1rem 0 5rem;
+}
+
+.carousel-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  overflow: hidden;
+  flex: 1;
+  min-width: 0;
+}
+
+.carousel-card {
+  position: relative;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+  font: inherit;
+  background: var(--bg-alt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-faint);
+}
+
+.carousel-card.active {
+  width: min(56vw, 640px);
+  height: min(48vw, 420px);
+  border: 1px solid var(--border);
+  animation: card-in 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel-card.peek {
+  width: 140px;
+  height: 320px;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.carousel-card.peek:hover {
+  opacity: 0.6;
+}
+
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.carousel-title {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  font-size: clamp(2.25rem, 5.5vw, 4rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
+  animation: title-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+@keyframes title-in {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.placeholder-label {
+  position: absolute;
+  bottom: 1.25rem;
+  font-size: 0.7rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--text-dim);
+}
+
+.corner-tl {
+  top: -12px;
+  left: -12px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.corner-tr {
+  top: -12px;
+  right: -12px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.corner-bl {
+  bottom: -12px;
+  left: -12px;
+  border-right: none;
+  border-top: none;
+}
+
+.corner-br {
+  bottom: -12px;
+  right: -12px;
+  border-left: none;
+  border-top: none;
+}
+
+.carousel-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-dim);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.carousel-arrow:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.carousel-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.carousel-close {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-dim);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.carousel-close:hover {
+  color: var(--text);
+  border-color: var(--text-dim);
+}
+
+.explore-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+.explore-btn:hover {
+  border-color: var(--text-dim);
+  background: var(--bg-alt);
+}
+
+@media (max-width: 700px) {
+  .carousel-card.peek {
+    display: none;
+  }
+
+  .carousel-card.active {
+    width: 80vw;
+    height: 60vw;
+  }
+}

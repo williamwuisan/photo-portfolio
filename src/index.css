@@ -1,0 +1,76 @@
+:root {
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --bg: #1a1618;
+  --bg-alt: #211c1f;
+  --text: #f2efe9;
+  --text-dim: rgba(242, 239, 233, 0.55);
+  --text-faint: rgba(242, 239, 233, 0.35);
+  --border: rgba(242, 239, 233, 0.12);
+
+  font: 16px/1.5 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 400;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.gallery-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+::view-transition-group(*) {
+  animation-duration: 1.1s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 1.1s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(root) {
+  animation-name: view-zoom-out;
+}
+
+::view-transition-new(root) {
+  animation-name: view-zoom-in;
+}
+
+@keyframes view-zoom-out {
+  to {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@keyframes view-zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}

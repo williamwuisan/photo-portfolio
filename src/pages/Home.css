@@ -1,0 +1,55 @@
+.home {
+  position: relative;
+  min-height: 100svh;
+  padding-top: 7rem;
+}
+
+.sidebar-text {
+  position: fixed;
+  left: 1.75rem;
+  bottom: 3rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  z-index: 5;
+}
+
+.home-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+}
+
+.home-inner > .gallery-column {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.hero-copy {
+  text-align: center;
+  padding: 2rem 0 3rem;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.hero-copy p {
+  color: var(--text-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .sidebar-text {
+    display: none;
+  }
+}
