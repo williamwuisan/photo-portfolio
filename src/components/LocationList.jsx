@@ -16,7 +16,16 @@ function LocationListItem({ location, index, onSelect, enabled }) {
         viewTransitionName: `photo-${location.slug}`,
         transitionDelay: `${index * 0.15}s`,
       }}
-    />
+    >
+      {location.thumbnail && (
+        <img
+          src={location.thumbnail}
+          alt=""
+          className="location-item-img"
+          loading="lazy"
+        />
+      )}
+    </button>
   )
 }
 

@@ -26,6 +26,8 @@ function LocationCarousel({ initialIndex = 0, onClose }) {
   const prevIndex = (active - 1 + count) % count
   const nextIndex = (active + 1) % count
   const current = locations[active]
+  const prev = locations[prevIndex]
+  const next = locations[nextIndex]
 
   return (
     <div className="carousel-wrap">
@@ -44,9 +46,13 @@ function LocationCarousel({ initialIndex = 0, onClose }) {
             type="button"
             className="carousel-card peek peek-left"
             onClick={() => go(-1)}
-            aria-label={`Go to ${locations[prevIndex].title}`}
+            aria-label={`Go to ${prev.title}`}
           >
-            <span>{locations[prevIndex].title}</span>
+            {prev.thumbnail ? (
+              <img src={prev.thumbnail} alt="" className="carousel-card-img" />
+            ) : (
+              <span>{prev.title}</span>
+            )}
           </button>
 
           <div
@@ -58,7 +64,18 @@ function LocationCarousel({ initialIndex = 0, onClose }) {
             <span className="corner corner-tr" />
             <span className="corner corner-bl" />
             <span className="corner corner-br" />
-            <span className="placeholder-label">{current.title} cover</span>
+            {current.thumbnail ? (
+              <>
+                <img
+                  src={current.thumbnail}
+                  alt=""
+                  className="carousel-card-img"
+                />
+                <span className="carousel-scrim" />
+              </>
+            ) : (
+              <span className="placeholder-label">{current.title} cover</span>
+            )}
             <h2 className="carousel-title">{current.title}</h2>
           </div>
 
@@ -66,9 +83,13 @@ function LocationCarousel({ initialIndex = 0, onClose }) {
             type="button"
             className="carousel-card peek peek-right"
             onClick={() => go(1)}
-            aria-label={`Go to ${locations[nextIndex].title}`}
+            aria-label={`Go to ${next.title}`}
           >
-            <span>{locations[nextIndex].title}</span>
+            {next.thumbnail ? (
+              <img src={next.thumbnail} alt="" className="carousel-card-img" />
+            ) : (
+              <span>{next.title}</span>
+            )}
           </button>
         </div>
 

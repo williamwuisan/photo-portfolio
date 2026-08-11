@@ -18,10 +18,12 @@ function LocationGallery() {
     )
   }
 
-  const photos = Array.from({ length: location.photoCount }, (_, i) => ({
-    id: i + 1,
-    label: `${location.title} — Photo ${i + 1}`,
-  }))
+  const photos =
+    location.photos ??
+    Array.from({ length: location.photoCount }, (_, i) => ({
+      id: i + 1,
+      label: `${location.title} — Photo ${i + 1}`,
+    }))
 
   return (
     <section className="location-gallery">

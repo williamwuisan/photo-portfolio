@@ -48,7 +48,15 @@ function FilmViewer({ photos }) {
           key={current.id}
           style={{ '--advance-dir': dir === 1 ? '28px' : '-28px' }}
         >
-          <span className="film-frame-label">{current.label}</span>
+          {current.src ? (
+            <img
+              src={current.src}
+              alt={current.label ?? ''}
+              className="film-frame-img"
+            />
+          ) : (
+            <span className="film-frame-label">{current.label}</span>
+          )}
         </div>
 
         <button
@@ -75,6 +83,14 @@ function FilmViewer({ photos }) {
               onClick={() => goTo(i)}
               aria-label={`View ${photo.label}`}
             >
+              {(photo.thumb || photo.src) && (
+                <img
+                  src={photo.thumb || photo.src}
+                  alt=""
+                  className="filmstrip-thumb-img"
+                  loading="lazy"
+                />
+              )}
               {i === active && (
                 <>
                   <span className="film-corner film-corner-tl" />
