@@ -115,7 +115,12 @@
   background: var(--pine);
   border: 1px solid var(--border);
   padding: 0.75rem 0;
-  scrollbar-width: thin;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.filmstrip::-webkit-scrollbar {
+  display: none;
 }
 
 .filmstrip::before,
