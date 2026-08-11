@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { locations } from '../data/locations'
-import RevealImage from '../components/RevealImage'
+import FilmViewer from '../components/FilmViewer'
 import './LocationGallery.css'
 
 function LocationGallery() {
@@ -34,11 +34,7 @@ function LocationGallery() {
         <span>{location.year}</span>
       </div>
 
-      <div className="gallery-column">
-        {photos.map((photo) => (
-          <RevealImage key={photo.id} label={photo.label} />
-        ))}
-      </div>
+      <FilmViewer photos={photos} />
     </section>
   )
 }
