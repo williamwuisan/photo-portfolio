@@ -1,27 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { locations } from '../data/locations'
 import './LocationCarousel.css'
 
 function LocationCarousel({ initialIndex = 0, onClose }) {
   const [active, setActive] = useState(initialIndex)
-  const transitioning = useRef(false)
+  const [dir, setDir] = useState(1)
   const count = locations.length
 
-  const go = (dir) => {
-    if (transitioning.current) return
-    const update = () => setActive((prev) => (prev + dir + count) % count)
-
-    if (document.startViewTransition) {
-      transitioning.current = true
-      document
-        .startViewTransition(update)
-        .finished.finally(() => {
-          transitioning.current = false
-        })
-    } else {
-      update()
-    }
+  const go = (d) => {
+    setDir(d)
+    setActive((prev) => (prev + d + count) % count)
   }
 
   useEffect(() => {
@@ -61,7 +50,7 @@ function LocationCarousel({ initialIndex = 0, onClose }) {
           </button>
 
           <div
-            className="carousel-card active"
+            className={`carousel-card active slide-${dir === 1 ? 'right' : 'left'}`}
             key={current.slug}
             style={{ viewTransitionName: `photo-${current.slug}` }}
           >

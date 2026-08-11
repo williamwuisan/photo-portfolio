@@ -41,7 +41,14 @@
   width: min(56vw, 640px);
   height: min(48vw, 420px);
   border: 1px solid var(--border);
-  animation: card-in 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel-card.active.slide-right {
+  animation: slide-in-right 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.carousel-card.active.slide-left {
+  animation: slide-in-left 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .carousel-card.peek {
@@ -59,14 +66,25 @@
   opacity: 0.6;
 }
 
-@keyframes card-in {
+@keyframes slide-in-right {
   from {
     opacity: 0;
-    transform: scale(0.96);
+    transform: translateX(48px) scale(0.97);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-48px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
   }
 }
 
