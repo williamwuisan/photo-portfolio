@@ -2,15 +2,11 @@
   all: unset;
   box-sizing: border-box;
   cursor: pointer;
+  display: block;
   width: 100%;
-  height: clamp(260px, 45vh, 440px);
+  aspect-ratio: 3 / 4;
   background: var(--bg-alt);
   border: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
   opacity: 0;
   transform: translateX(-64px);
   transition:
@@ -26,19 +22,4 @@
 
 .location-item:hover {
   border-color: var(--accent);
-}
-
-.location-item-title {
-  font-family: 'Playfair Display', serif;
-  font-weight: 500;
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--text);
-}
-
-.location-item-year {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  color: var(--text-faint);
 }

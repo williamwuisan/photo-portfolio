@@ -13,10 +13,10 @@ function FlipText({ text }) {
   )
 }
 
-function Navbar() {
+function Navbar({ onBrandClick }) {
   return (
     <header className="navbar">
-      <NavLink to="/" className="brand">
+      <NavLink to="/" className="brand" onClick={onBrandClick}>
         <Logo size="small" />
       </NavLink>
       <nav>

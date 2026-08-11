@@ -11,14 +11,12 @@ function LocationListItem({ location, index, onSelect, enabled }) {
       type="button"
       className={`location-item${inView ? ' is-visible' : ''}`}
       onClick={() => onSelect(index)}
+      aria-label={`Open ${location.title}`}
       style={{
         viewTransitionName: `photo-${location.slug}`,
         transitionDelay: `${index * 0.15}s`,
       }}
-    >
-      <span className="location-item-title">{location.title}</span>
-      <span className="location-item-year">{location.year}</span>
-    </button>
+    />
   )
 }
 

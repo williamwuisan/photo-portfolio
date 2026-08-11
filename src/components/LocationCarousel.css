@@ -44,11 +44,11 @@
 }
 
 .carousel-card.active.slide-right {
-  animation: slide-in-right 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: slide-in-right 1.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .carousel-card.active.slide-left {
-  animation: slide-in-left 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: slide-in-left 1.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .carousel-card.peek {

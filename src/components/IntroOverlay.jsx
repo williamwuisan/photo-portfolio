@@ -6,8 +6,8 @@ function IntroOverlay({ onDone }) {
   const [leaving, setLeaving] = useState(false)
 
   useEffect(() => {
-    const leaveTimer = setTimeout(() => setLeaving(true), 1200)
-    const doneTimer = setTimeout(() => onDone(), 1850)
+    const leaveTimer = setTimeout(() => setLeaving(true), 2100)
+    const doneTimer = setTimeout(() => onDone(), 2750)
     return () => {
       clearTimeout(leaveTimer)
       clearTimeout(doneTimer)
@@ -16,7 +16,7 @@ function IntroOverlay({ onDone }) {
 
   return (
     <div className={`intro-overlay${leaving ? ' is-leaving' : ''}`}>
-      <Logo size="large" className="intro-logo" />
+      <Logo size="large" animated className="intro-logo" />
     </div>
   )
 }

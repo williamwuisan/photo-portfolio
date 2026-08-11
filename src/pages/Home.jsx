@@ -3,23 +3,24 @@ import LocationCarousel from '../components/LocationCarousel'
 import LocationList from '../components/LocationList'
 import './Home.css'
 
+function runViewTransition(update) {
+  if (document.startViewTransition) {
+    const transition = document.startViewTransition(update)
+    transition.finished.catch(() => {})
+  } else {
+    update()
+  }
+}
+
 function Home({ introReady = true }) {
   const [focusedIndex, setFocusedIndex] = useState(null)
 
   const openLocation = (index) => {
-    if (document.startViewTransition) {
-      document.startViewTransition(() => setFocusedIndex(index))
-    } else {
-      setFocusedIndex(index)
-    }
+    runViewTransition(() => setFocusedIndex(index))
   }
 
   const closeLocation = () => {
-    if (document.startViewTransition) {
-      document.startViewTransition(() => setFocusedIndex(null))
-    } else {
-      setFocusedIndex(null)
-    }
+    runViewTransition(() => setFocusedIndex(null))
   }
 
   return (

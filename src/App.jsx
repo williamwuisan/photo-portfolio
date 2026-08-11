@@ -9,14 +9,18 @@ import LocationGallery from './pages/LocationGallery'
 
 function App() {
   const [introDone, setIntroDone] = useState(false)
+  const [homeKey, setHomeKey] = useState(0)
 
   return (
     <>
       {!introDone && <IntroOverlay onDone={() => setIntroDone(true)} />}
-      <Navbar />
+      <Navbar onBrandClick={() => setHomeKey((k) => k + 1)} />
       <main>
         <Routes>
-          <Route path="/" element={<Home introReady={introDone} />} />
+          <Route
+            path="/"
+            element={<Home key={homeKey} introReady={introDone} />}
+          />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/location/:slug" element={<LocationGallery />} />
