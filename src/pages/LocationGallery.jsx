@@ -31,11 +31,6 @@ function LocationGallery() {
         ← Back
       </Link>
 
-      <div className="location-header">
-        <h1>{location.title}</h1>
-        <span>{location.year}</span>
-      </div>
-
       <FilmViewer photos={photos} />
     </section>
   )
