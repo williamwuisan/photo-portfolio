@@ -22,7 +22,7 @@ function LocationListItem({ location, index, onSelect, enabled }) {
 
 function LocationList({ onSelect, enabled = true }) {
   return (
-    <div className="gallery-column">
+    <div className="location-row">
       {locations.map((location, index) => (
         <LocationListItem
           key={location.slug}

@@ -23,8 +23,8 @@
   padding: 0 1.5rem 2rem;
 }
 
-.home-inner > .gallery-column {
-  max-width: 360px;
+.home-inner > .location-row {
+  max-width: 760px;
   margin: 0 auto;
 }
 

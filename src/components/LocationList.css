@@ -1,10 +1,17 @@
+.location-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .location-item {
   all: unset;
   box-sizing: border-box;
   cursor: pointer;
   display: block;
-  width: 100%;
-  aspect-ratio: 3 / 4;
+  width: 130px;
+  aspect-ratio: 2 / 3;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   opacity: 0;
@@ -22,4 +29,10 @@
 
 .location-item:hover {
   border-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .location-item {
+    width: 96px;
+  }
 }
