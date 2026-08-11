@@ -1,7 +1,11 @@
 .home {
   position: relative;
-  min-height: 100svh;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   padding-top: 7rem;
+  box-sizing: border-box;
 }
 
 .sidebar-text {
@@ -18,33 +22,20 @@
 }
 
 .home-inner {
+  flex: 1;
+  min-height: 0;
   max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem 2rem;
+  padding: 0 1.5rem 3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .home-inner > .location-row {
   max-width: 760px;
-  margin: 0 auto;
-}
-
-.hero-copy {
-  text-align: center;
-  padding: 2rem 0 3rem;
-}
-
-.hero-copy h1 {
-  font-size: clamp(2.25rem, 5vw, 3rem);
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  margin-bottom: 1rem;
-}
-
-.hero-copy p {
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  line-height: 1.7;
-  max-width: 420px;
   margin: 0 auto;
 }
 

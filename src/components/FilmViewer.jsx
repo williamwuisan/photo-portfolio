@@ -48,6 +48,10 @@ function FilmViewer({ photos }) {
           key={current.id}
           style={{ '--advance-dir': dir === 1 ? '28px' : '-28px' }}
         >
+          <span className="film-frame-corner film-frame-corner-tl" />
+          <span className="film-frame-corner film-frame-corner-tr" />
+          <span className="film-frame-corner film-frame-corner-bl" />
+          <span className="film-frame-corner film-frame-corner-br" />
           {current.src ? (
             <img
               src={current.src}

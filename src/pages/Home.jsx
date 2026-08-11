@@ -30,15 +30,6 @@ function Home({ introReady = true }) {
       </aside>
 
       <div className="home-inner">
-        <div className="hero-copy">
-          <h1>Selected Work</h1>
-          <p>
-            {focusedIndex === null
-              ? 'Click a location to explore.'
-              : 'Use the arrows, or click a side card to browse.'}
-          </p>
-        </div>
-
         {focusedIndex === null ? (
           <LocationList onSelect={openLocation} enabled={introReady} />
         ) : (
