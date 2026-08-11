@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { locations } from '../data/locations'
+import { useImageTone } from '../hooks/useImageTone'
 import './LocationCarousel.css'
 
 function LocationCarousel({ initialIndex = 0, onClose }) {
@@ -28,6 +29,7 @@ function LocationCarousel({ initialIndex = 0, onClose }) {
   const current = locations[active]
   const prev = locations[prevIndex]
   const next = locations[nextIndex]
+  const titleTone = useImageTone(current.thumbnail)
 
   return (
     <div className="carousel-wrap">
@@ -65,18 +67,17 @@ function LocationCarousel({ initialIndex = 0, onClose }) {
             <span className="corner corner-bl" />
             <span className="corner corner-br" />
             {current.thumbnail ? (
-              <>
-                <img
-                  src={current.thumbnail}
-                  alt=""
-                  className="carousel-card-img"
-                />
-                <span className="carousel-scrim" />
-              </>
+              <img
+                src={current.thumbnail}
+                alt=""
+                className="carousel-card-img"
+              />
             ) : (
               <span className="placeholder-label">{current.title} cover</span>
             )}
-            <h2 className="carousel-title">{current.title}</h2>
+            <h2 className={`carousel-title carousel-title-${titleTone}`}>
+              {current.title}
+            </h2>
           </div>
 
           <button

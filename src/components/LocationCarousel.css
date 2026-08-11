@@ -46,17 +46,6 @@
   object-fit: cover;
 }
 
-.carousel-scrim {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(13, 29, 26, 0.45) 0%,
-    rgba(13, 29, 26, 0.15) 45%,
-    rgba(13, 29, 26, 0.55) 100%
-  );
-}
-
 .carousel-card.active {
   width: min(56vw, 640px);
   height: min(48vw, 420px);
@@ -115,9 +104,17 @@
   font-size: clamp(2.25rem, 5.5vw, 4rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--accent);
-  text-shadow: 0 4px 28px rgba(0, 0, 0, 0.55);
   animation: title-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
+}
+
+.carousel-title-light {
+  color: var(--text);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
+}
+
+.carousel-title-dark {
+  color: var(--bg);
+  text-shadow: 0 2px 14px rgba(255, 255, 255, 0.4);
 }
 
 @keyframes title-in {
