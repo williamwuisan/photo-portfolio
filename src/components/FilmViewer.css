@@ -16,13 +16,20 @@
   align-items: center;
 }
 
-.film-frame {
+.film-stage {
   position: relative;
   flex: 1;
   min-height: 0;
-  width: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.film-frame {
+  position: relative;
   max-width: 100%;
-  aspect-ratio: 3 / 2;
+  max-height: 100%;
   background: var(--bg-alt);
   border: 1px solid var(--border);
   display: flex;
@@ -57,7 +64,7 @@
 .film-frame-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .filmstrip-thumb-img {
@@ -266,12 +273,6 @@
 
   .film-main {
     min-height: 0;
-  }
-
-  .film-frame {
-    width: 100%;
-    height: auto;
-    flex: 1;
   }
 
   .filmstrip {
