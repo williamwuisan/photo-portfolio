@@ -34,6 +34,27 @@
   color: var(--accent);
 }
 
+@media (max-width: 600px) {
+  .navbar {
+    padding: 1.25rem 1.25rem;
+  }
+
+  .navbar nav {
+    gap: 0.9rem;
+  }
+
+  .navbar nav a {
+    font-size: 0.62rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar nav {
+    gap: 0.65rem;
+  }
+}
+
 /* flip-text hover reveal */
 .flip {
   display: inline-block;

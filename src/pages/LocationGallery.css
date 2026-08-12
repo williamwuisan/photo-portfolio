@@ -24,3 +24,9 @@
 .back-link:hover {
   color: var(--text);
 }
+
+@media (max-width: 640px) {
+  .location-gallery {
+    padding: 5.25rem 1.25rem 1.25rem;
+  }
+}

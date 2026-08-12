@@ -48,3 +48,23 @@
   filter: grayscale(0);
   transform: scale(1.04);
 }
+
+@media (max-width: 640px) {
+  .location-row {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .location-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .location-item {
+    flex: 0 0 92px;
+    min-width: 92px;
+    scroll-snap-align: start;
+  }
+}

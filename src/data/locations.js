@@ -114,6 +114,37 @@ const praguePhotos = pragueLabels.map((label, i) => {
   }
 })
 
+const parisLabels = [
+  'Statue detail',
+  'Seine riverside',
+  'The Panthéon',
+  'Dome ceiling detail',
+  'Fresco detail',
+  'Disneyland Paris entrance',
+  'Sleeping Beauty Castle',
+  'Pirate statue',
+  'Topiary characters',
+  'Stained glass window',
+  'Glassblowing demonstration',
+  'Statues among the flowers',
+  'Buzz Lightyear',
+  'Disneyland Hotel at night',
+  'Sleeping Beauty Castle at night',
+  'Arc de Triomphe',
+  'Spiral staircase',
+  'The Eiffel Tower',
+]
+
+const parisPhotos = parisLabels.map((label, i) => {
+  const idx = String(i + 1).padStart(2, '0')
+  return {
+    id: i + 1,
+    label,
+    src: `${base}photos/paris/full/${idx}.jpg`,
+    thumb: `${base}photos/paris/thumb/${idx}.jpg`,
+  }
+})
+
 export const locations = [
   {
     slug: 'xinjiang',
@@ -135,6 +166,13 @@ export const locations = [
     year: '2024',
     thumbnail: `${base}photos/prague/cover.jpg`,
     photos: praguePhotos,
+  },
+  {
+    slug: 'paris',
+    title: 'Paris',
+    year: '2025',
+    thumbnail: `${base}photos/paris/cover.jpg`,
+    photos: parisPhotos,
   },
   { slug: 'bali', title: 'Bali', year: '2024', photoCount: 4 },
   { slug: 'yogyakarta', title: 'Yogyakarta', year: '2024', photoCount: 3 },
