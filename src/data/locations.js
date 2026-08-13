@@ -229,6 +229,158 @@ const parisPhotos = parisLabels.map((label, i) => {
   }
 })
 
+const denmarkLabels = [
+  'Nyhavn harbor',
+  'Church dome across the water',
+  'Boat on the canal',
+  'Rosenborg Castle',
+  'Christmas lights, reindeer',
+  'Harbor at dusk',
+  'Park path at sunset',
+  'The Little Mermaid statue',
+  'Equestrian statue detail',
+  'Old town street',
+  'Amalienborg Palace',
+  'Tivoli Gardens at night',
+  'Miniature city model',
+]
+
+const denmarkDates = [
+  '28 Dec 2025',
+  '28 Dec 2025',
+  '28 Dec 2025',
+  '28 Dec 2025',
+  '28 Dec 2025',
+  '29 Dec 2025',
+  '29 Dec 2025',
+  '29 Dec 2025',
+  '29 Dec 2025',
+  '29 Dec 2025',
+  '29 Dec 2025',
+  '29 Dec 2025',
+  '31 Dec 2025',
+]
+
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const denmarkNamed = [
+  true, // Nyhavn harbor
+  false, // Church dome across the water
+  false, // Boat on the canal
+  true, // Rosenborg Castle
+  false, // Christmas lights, reindeer
+  false, // Harbor at dusk
+  false, // Park path at sunset
+  true, // The Little Mermaid statue
+  false, // Equestrian statue detail
+  false, // Old town street
+  true, // Amalienborg Palace
+  true, // Tivoli Gardens at night
+  false, // Miniature city model
+]
+
+const denmarkPhotos = denmarkLabels.map((label, i) => {
+  const idx = String(i + 1).padStart(2, '0')
+  return {
+    id: i + 1,
+    label,
+    date: denmarkDates[i],
+    namedPlace: denmarkNamed[i],
+    src: `${base}photos/denmark/full/${idx}.jpg`,
+    thumb: `${base}photos/denmark/thumb/${idx}.jpg`,
+  }
+})
+
+const hungaryLabels = [
+  'Clock tower',
+  'Little Princess statue',
+  'Yellow tram',
+  'City street view',
+  "St. Stephen's Basilica",
+  'Hungarian Parliament staircase',
+  'Hungarian Parliament assembly hall',
+  'Hungarian Parliament Building',
+  'Chain Bridge',
+  'View through the bastion arch',
+  "Fisherman's Bastion",
+  'Matthias Church rooftop',
+  'View over the Danube',
+  'Parliament across the Danube',
+  'Statue from behind',
+  'Castle tower',
+  "Heroes' Square",
+  'Vajdahunyad Castle',
+  'Basilica dome ceiling detail',
+  'Basilica interior',
+  'Buda Castle at night',
+  'Darth Vader display',
+  'Liberty Bridge',
+]
+
+const hungaryDates = [
+  '5 Jul 2025',
+  '5 Jul 2025',
+  '5 Jul 2025',
+  '5 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '6 Jul 2025',
+  '7 Jul 2025',
+  '7 Jul 2025',
+  '7 Jul 2025',
+  '7 Jul 2025',
+  '7 Jul 2025',
+  '7 Jul 2025',
+  '8 Jul 2025',
+  '8 Jul 2025',
+]
+
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const hungaryNamed = [
+  false, // Clock tower
+  true, // Little Princess statue
+  false, // Yellow tram
+  false, // City street view
+  true, // St. Stephen's Basilica
+  true, // Hungarian Parliament staircase
+  true, // Hungarian Parliament assembly hall
+  true, // Hungarian Parliament Building
+  true, // Chain Bridge
+  false, // View through the bastion arch
+  true, // Fisherman's Bastion
+  true, // Matthias Church rooftop
+  true, // View over the Danube
+  true, // Parliament across the Danube
+  false, // Statue from behind
+  false, // Castle tower
+  true, // Heroes' Square
+  true, // Vajdahunyad Castle
+  false, // Basilica dome ceiling detail
+  false, // Basilica interior
+  true, // Buda Castle at night
+  false, // Darth Vader display
+  true, // Liberty Bridge
+]
+
+const hungaryPhotos = hungaryLabels.map((label, i) => {
+  const idx = String(i + 1).padStart(2, '0')
+  return {
+    id: i + 1,
+    label,
+    date: hungaryDates[i],
+    namedPlace: hungaryNamed[i],
+    src: `${base}photos/hungary/full/${idx}.jpg`,
+    thumb: `${base}photos/hungary/thumb/${idx}.jpg`,
+  }
+})
+
 export const locations = [
   {
     slug: 'xinjiang',
@@ -257,6 +409,20 @@ export const locations = [
     year: '2025',
     thumbnail: `${base}photos/paris/cover.jpg`,
     photos: parisPhotos,
+  },
+  {
+    slug: 'denmark',
+    title: 'Denmark',
+    year: '2025',
+    thumbnail: `${base}photos/denmark/cover.jpg`,
+    photos: denmarkPhotos,
+  },
+  {
+    slug: 'hungary',
+    title: 'Hungary',
+    year: '2025',
+    thumbnail: `${base}photos/hungary/cover.jpg`,
+    photos: hungaryPhotos,
   },
   { slug: 'bali', title: 'Bali', year: '2024', photoCount: 4 },
   { slug: 'yogyakarta', title: 'Yogyakarta', year: '2024', photoCount: 3 },
