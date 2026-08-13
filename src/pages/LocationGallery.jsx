@@ -31,7 +31,7 @@ function LocationGallery() {
         ← Back
       </Link>
 
-      <FilmViewer photos={photos} />
+      <FilmViewer photos={photos} locationTitle={location.title} />
     </section>
   )
 }

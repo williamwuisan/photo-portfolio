@@ -3,7 +3,7 @@ import './FilmViewer.css'
 
 const DEFAULT_RATIO = 3 / 2
 
-function FilmViewer({ photos }) {
+function FilmViewer({ photos, locationTitle }) {
   const [active, setActive] = useState(0)
   const [dir, setDir] = useState(1)
   const [ratio, setRatio] = useState(DEFAULT_RATIO)
@@ -77,6 +77,20 @@ function FilmViewer({ photos }) {
               />
             ) : (
               <span className="film-frame-label">{current.label}</span>
+            )}
+            {current.src && (current.label || locationTitle || current.date) && (
+              <div className="film-frame-stamp">
+                {current.label && (
+                  <span className="film-frame-stamp-label">
+                    {current.label}
+                  </span>
+                )}
+                {(locationTitle || current.date) && (
+                  <span className="film-frame-stamp-meta">
+                    {[locationTitle, current.date].filter(Boolean).join(' · ')}
+                  </span>
+                )}
+              </div>
             )}
           </div>
 

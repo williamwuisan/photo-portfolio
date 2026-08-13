@@ -104,11 +104,30 @@ const pragueLabels = [
   'Charles Bridge and castle at night',
 ]
 
+const pragueDates = [
+  '30 Dec 2024',
+  '30 Dec 2024',
+  '30 Dec 2024',
+  '30 Dec 2024',
+  '30 Dec 2024',
+  '31 Dec 2024',
+  '31 Dec 2024',
+  '31 Dec 2024',
+  '31 Dec 2024',
+  '1 Jan 2025',
+  '1 Jan 2025',
+  '1 Jan 2025',
+  '2 Jan 2025',
+  '3 Jan 2025',
+  '3 Jan 2025',
+]
+
 const praguePhotos = pragueLabels.map((label, i) => {
   const idx = String(i + 1).padStart(2, '0')
   return {
     id: i + 1,
     label,
+    date: pragueDates[i],
     src: `${base}photos/prague/full/${idx}.jpg`,
     thumb: `${base}photos/prague/thumb/${idx}.jpg`,
   }
@@ -135,11 +154,33 @@ const parisLabels = [
   'The Eiffel Tower',
 ]
 
+const parisDates = [
+  '3 May 2025',
+  '3 May 2025',
+  '3 May 2025',
+  '3 May 2025',
+  '3 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '4 May 2025',
+  '5 May 2025',
+  '5 May 2025',
+  '5 May 2025',
+]
+
 const parisPhotos = parisLabels.map((label, i) => {
   const idx = String(i + 1).padStart(2, '0')
   return {
     id: i + 1,
     label,
+    date: parisDates[i],
     src: `${base}photos/paris/full/${idx}.jpg`,
     thumb: `${base}photos/paris/thumb/${idx}.jpg`,
   }
