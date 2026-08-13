@@ -122,12 +122,32 @@ const pragueDates = [
   '3 Jan 2025',
 ]
 
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const pragueNamed = [
+  true, // Praha hlavní nádraží
+  false, // Church tower
+  false, // Old town street at dusk
+  false, // Illuminated angel, Christmas market
+  true, // Astronomical Clock
+  true, // St. Nicholas Church and rooftops
+  true, // Prague Castle skyline
+  true, // The hanging man
+  false, // Vintage car at dusk
+  false, // Relief sculpture detail
+  true, // Lennon Wall
+  true, // Dancing House
+  false, // Stained glass windows
+  false, // Sitting statue
+  true, // Charles Bridge and castle at night
+]
+
 const praguePhotos = pragueLabels.map((label, i) => {
   const idx = String(i + 1).padStart(2, '0')
   return {
     id: i + 1,
     label,
     date: pragueDates[i],
+    namedPlace: pragueNamed[i],
     src: `${base}photos/prague/full/${idx}.jpg`,
     thumb: `${base}photos/prague/thumb/${idx}.jpg`,
   }
@@ -175,12 +195,35 @@ const parisDates = [
   '5 May 2025',
 ]
 
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const parisNamed = [
+  false, // Statue detail
+  true, // Seine riverside
+  true, // The Panthéon
+  false, // Dome ceiling detail
+  false, // Fresco detail
+  true, // Disneyland Paris entrance
+  true, // Sleeping Beauty Castle
+  false, // Pirate statue
+  false, // Topiary characters
+  false, // Stained glass window
+  false, // Glassblowing demonstration
+  false, // Statues among the flowers
+  false, // Buzz Lightyear
+  true, // Disneyland Hotel at night
+  true, // Sleeping Beauty Castle at night
+  true, // Arc de Triomphe
+  false, // Spiral staircase
+  true, // The Eiffel Tower
+]
+
 const parisPhotos = parisLabels.map((label, i) => {
   const idx = String(i + 1).padStart(2, '0')
   return {
     id: i + 1,
     label,
     date: parisDates[i],
+    namedPlace: parisNamed[i],
     src: `${base}photos/paris/full/${idx}.jpg`,
     thumb: `${base}photos/paris/thumb/${idx}.jpg`,
   }

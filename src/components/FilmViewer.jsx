@@ -78,20 +78,26 @@ function FilmViewer({ photos, locationTitle }) {
             ) : (
               <span className="film-frame-label">{current.label}</span>
             )}
-            {current.src && (current.label || locationTitle || current.date) && (
-              <div className="film-frame-stamp">
-                {current.label && (
-                  <span className="film-frame-stamp-label">
-                    {current.label}
-                  </span>
-                )}
-                {(locationTitle || current.date) && (
-                  <span className="film-frame-stamp-meta">
-                    {[locationTitle, current.date].filter(Boolean).join(' · ')}
-                  </span>
-                )}
-              </div>
-            )}
+            {current.src && (() => {
+              const isNamed = current.namedPlace !== false
+              const showLabel = isNamed && current.label
+              const metaText = [isNamed ? locationTitle : null, current.date]
+                .filter(Boolean)
+                .join(' · ')
+              if (!showLabel && !metaText) return null
+              return (
+                <div className="film-frame-stamp">
+                  {showLabel && (
+                    <span className="film-frame-stamp-label">
+                      {current.label}
+                    </span>
+                  )}
+                  {metaText && (
+                    <span className="film-frame-stamp-meta">{metaText}</span>
+                  )}
+                </div>
+              )
+            })()}
           </div>
 
           <button
