@@ -14,6 +14,8 @@ function App() {
   return (
     <>
       {!introDone && <IntroOverlay onDone={() => setIntroDone(true)} />}
+      <span className="edge-bar edge-bar-top" aria-hidden="true" />
+      <span className="edge-bar edge-bar-bottom" aria-hidden="true" />
       <Navbar onBrandClick={() => setHomeKey((k) => k + 1)} />
       <main>
         <Routes>
