@@ -381,6 +381,154 @@ const hungaryPhotos = hungaryLabels.map((label, i) => {
   }
 })
 
+const germanyLabels = [
+  'Old town gate passage',
+  'Brick apartment street',
+  'Street scene with a dog',
+  'Parked scooters',
+  'Red-roofed building',
+  'Building steps',
+  'Turret building',
+  'Spiral staircase',
+  'The Santa Barbara Anna, Rostock harbour',
+  'Marina',
+  'Dog resting on a boat',
+  'Harbor mural',
+  'Visit Rostock sign',
+  'Dockyard cranes',
+  'Fishing at the harbor',
+  'Window reflection',
+  'Viking ship sculpture',
+  'Vintage harbor photograph',
+  'Rostock tram and historic building',
+  'Warnemünde Lighthouse',
+  'Old cannon on the fortress wall',
+  'Warnemünde Lighthouse pier',
+  'Street musician',
+  'Lighthouse among the trees',
+  "Warnemünde fishermen's houses",
+  'Am Strom street sign',
+  'Alter Strom canal, Warnemünde',
+  'Fishing boat detail',
+  'Pension sign',
+  "Fisherman's cottage",
+  'Path to the beach',
+  'Strandkorb beach chairs',
+  'Alley with lighthouse view',
+  'Warnemünde Lighthouse and promenade',
+  'Dinner on the floor',
+  'Love locks, Hohenzollern Bridge',
+  'Cologne Cathedral and Christmas market',
+  'Christmas market stall',
+  'Nutcracker figurines',
+  'Cologne Cathedral and Hohenzollern Bridge',
+  'Cologne Cathedral at night',
+  'Severin Bridge at sunset',
+]
+
+const germanyDates = [
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '20 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Apr 2026',
+  '21 Nov 2024',
+  '21 Nov 2024',
+  '21 Nov 2024',
+  '21 Nov 2024',
+  '21 Nov 2024',
+  '21 Nov 2024',
+  '22 Nov 2024',
+]
+
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const germanyNamed = [
+  false, // Old town gate passage
+  false, // Brick apartment street
+  false, // Street scene with a dog
+  false, // Parked scooters
+  false, // Red-roofed building
+  false, // Building steps
+  false, // Turret building
+  false, // Spiral staircase
+  true, // The Santa Barbara Anna, Rostock harbour
+  false, // Marina
+  false, // Dog resting on a boat
+  false, // Harbor mural
+  true, // Visit Rostock sign
+  false, // Dockyard cranes
+  false, // Fishing at the harbor
+  false, // Window reflection
+  false, // Viking ship sculpture
+  false, // Vintage harbor photograph
+  false, // Rostock tram and historic building
+  true, // Warnemünde Lighthouse
+  false, // Old cannon on the fortress wall
+  true, // Warnemünde Lighthouse pier
+  false, // Street musician
+  false, // Lighthouse among the trees
+  true, // Warnemünde fishermen's houses
+  true, // Am Strom street sign
+  true, // Alter Strom canal, Warnemünde
+  false, // Fishing boat detail
+  false, // Pension sign
+  false, // Fisherman's cottage
+  false, // Path to the beach
+  false, // Strandkorb beach chairs
+  false, // Alley with lighthouse view
+  true, // Warnemünde Lighthouse and promenade
+  false, // Dinner on the floor
+  true, // Love locks, Hohenzollern Bridge
+  true, // Cologne Cathedral and Christmas market
+  false, // Christmas market stall
+  false, // Nutcracker figurines
+  true, // Cologne Cathedral and Hohenzollern Bridge
+  true, // Cologne Cathedral at night
+  true, // Severin Bridge at sunset
+]
+
+const germanyPhotos = germanyLabels.map((label, i) => {
+  const idx = String(i + 1).padStart(2, '0')
+  return {
+    id: i + 1,
+    label,
+    date: germanyDates[i],
+    namedPlace: germanyNamed[i],
+    src: `${base}photos/germany/full/${idx}.jpg`,
+    thumb: `${base}photos/germany/thumb/${idx}.jpg`,
+  }
+})
+
 export const locations = [
   {
     slug: 'xinjiang',
@@ -424,8 +572,13 @@ export const locations = [
     thumbnail: `${base}photos/hungary/cover.jpg`,
     photos: hungaryPhotos,
   },
+  {
+    slug: 'germany',
+    title: 'Germany',
+    year: '2024–2026',
+    thumbnail: `${base}photos/germany/cover.jpg`,
+    photos: germanyPhotos,
+  },
   { slug: 'bali', title: 'Bali', year: '2024', photoCount: 4 },
   { slug: 'yogyakarta', title: 'Yogyakarta', year: '2024', photoCount: 3 },
-  { slug: 'bromo', title: 'Bromo', year: '2025', photoCount: 5 },
-  { slug: 'labuan-bajo', title: 'Labuan Bajo', year: '2025', photoCount: 4 },
 ]
