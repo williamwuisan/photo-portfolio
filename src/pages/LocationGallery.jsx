@@ -18,6 +18,8 @@ function LocationGallery() {
     )
   }
 
+  const backState = { reopenSlug: slug }
+
   const photos =
     location.photos ??
     Array.from({ length: location.photoCount }, (_, i) => ({
@@ -27,7 +29,7 @@ function LocationGallery() {
 
   return (
     <section className="location-gallery">
-      <Link to="/" className="back-link">
+      <Link to="/" state={backState} className="back-link">
         ← Back
       </Link>
 
