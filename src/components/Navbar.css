@@ -8,10 +8,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.9rem 2.5rem;
-  background: rgba(13, 29, 26, 0.85);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+  background: transparent;
 }
 
 .navbar .brand {
