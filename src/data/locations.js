@@ -1,40 +1,105 @@
 const base = import.meta.env.BASE_URL
 
-const xinjiangLabels = [
+const chinaLabels = [
   'Painted canyon overlook',
-  'River bend from the ridge',
+  'River bend canyon',
   'Wild sheep on the ridge',
   'Prayer flags at the summit',
-  'Prayer wheels',
   'Layered mountain valley',
+  'Mountain viewpoint dome',
+  'Mountain river',
+  'Street food skewers',
+  'Lakeside portrait',
   'Kanas Lake panorama',
-  'Kanas Lake shoreline',
-  'Mountain stream',
+  'Kanas River rapids',
   'Yardang desert',
-  'Riders at the Ghost City',
-  'Rider silhouette',
-  'Desert gateway',
+  'Ghost City camel caravan',
+  'Yurt at the grassland',
+  'Silk Road horseback performers',
+  'Desert gateway monument',
   'Sayram Lake shoreline',
-  'Horses on the grassland',
   'Sayram Lake overlook',
   'Warrior statues',
-  'Horses grazing',
+  'Ancient wall ruins',
   'Yurt camp',
-  'Sunset silhouette',
-  'Illuminated gateway',
+  'Modern landmark building',
   'Night pavilion',
-  'Modern landmark',
   'Temple gate',
-  'Golden statue',
+  'Golden statue temple',
+  'Golden statue with incense burner',
+  'Golden statue and temple stairs',
 ]
 
-const xinjiangPhotos = xinjiangLabels.map((label, i) => {
+const chinaDates = [
+  '24 Aug 2025',
+  '24 Aug 2025',
+  '24 Aug 2025',
+  '25 Aug 2025',
+  '25 Aug 2025',
+  '25 Aug 2025',
+  '25 Aug 2025',
+  '25 Aug 2025',
+  '26 Aug 2025',
+  '26 Aug 2025',
+  '26 Aug 2025',
+  '27 Aug 2025',
+  '27 Aug 2025',
+  '27 Aug 2025',
+  '27 Aug 2025',
+  '27 Aug 2025',
+  '28 Aug 2025',
+  '28 Aug 2025',
+  '29 Aug 2025',
+  '29 Aug 2025',
+  '29 Aug 2025',
+  '29 Aug 2025',
+  '30 Aug 2025',
+  '1 Sep 2025',
+  '1 Sep 2025',
+  '1 Sep 2025',
+  '1 Sep 2025',
+]
+
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const chinaNamed = [
+  false, // Painted canyon overlook
+  false, // River bend canyon
+  false, // Wild sheep on the ridge
+  false, // Prayer flags at the summit
+  false, // Layered mountain valley
+  false, // Mountain viewpoint dome
+  false, // Mountain river
+  false, // Street food skewers
+  false, // Lakeside portrait
+  true, // Kanas Lake panorama
+  true, // Kanas River rapids
+  true, // Yardang desert
+  true, // Ghost City camel caravan
+  false, // Yurt at the grassland
+  false, // Silk Road horseback performers
+  false, // Desert gateway monument
+  true, // Sayram Lake shoreline
+  true, // Sayram Lake overlook
+  false, // Warrior statues
+  false, // Ancient wall ruins
+  false, // Yurt camp
+  false, // Modern landmark building
+  false, // Night pavilion
+  false, // Temple gate
+  false, // Golden statue temple
+  false, // Golden statue with incense burner
+  false, // Golden statue and temple stairs
+]
+
+const chinaPhotos = chinaLabels.map((label, i) => {
   const idx = String(i + 1).padStart(2, '0')
   return {
     id: i + 1,
     label,
-    src: `${base}photos/xinjiang/full/${idx}.jpg`,
-    thumb: `${base}photos/xinjiang/thumb/${idx}.jpg`,
+    date: chinaDates[i],
+    namedPlace: chinaNamed[i],
+    src: `${base}photos/china/full/${idx}.jpg`,
+    thumb: `${base}photos/china/thumb/${idx}.jpg`,
   }
 })
 
@@ -531,11 +596,11 @@ const germanyPhotos = germanyLabels.map((label, i) => {
 
 export const locations = [
   {
-    slug: 'xinjiang',
-    title: 'Xinjiang',
+    slug: 'china',
+    title: 'China',
     year: '2025',
-    thumbnail: `${base}photos/xinjiang/cover.jpg`,
-    photos: xinjiangPhotos,
+    thumbnail: `${base}photos/china/cover.jpg`,
+    photos: chinaPhotos,
   },
   {
     slug: 'netherlands',
