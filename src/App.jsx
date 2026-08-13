@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 import IntroOverlay from './components/IntroOverlay'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -14,8 +15,6 @@ function App() {
   return (
     <>
       {!introDone && <IntroOverlay onDone={() => setIntroDone(true)} />}
-      <span className="edge-bar edge-bar-top" aria-hidden="true" />
-      <span className="edge-bar edge-bar-bottom" aria-hidden="true" />
       <Navbar onBrandClick={() => setHomeKey((k) => k + 1)} />
       <main>
         <Routes>
@@ -28,6 +27,7 @@ function App() {
           <Route path="/location/:slug" element={<LocationGallery />} />
         </Routes>
       </main>
+      <Footer />
     </>
   )
 }

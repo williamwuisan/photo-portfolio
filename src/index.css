@@ -46,23 +46,6 @@ img {
   gap: 1.5rem;
 }
 
-.edge-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--accent);
-  z-index: 50;
-  pointer-events: none;
-}
-
-.edge-bar-top {
-  top: 0;
-}
-
-.edge-bar-bottom {
-  bottom: 0;
-}
 
 ::view-transition-group(*) {
   animation-duration: 1.1s;
