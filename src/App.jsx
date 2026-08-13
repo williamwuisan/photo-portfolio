@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import IntroOverlay from './components/IntroOverlay'
@@ -11,6 +11,8 @@ import LocationGallery from './pages/LocationGallery'
 function App() {
   const [introDone, setIntroDone] = useState(false)
   const [homeKey, setHomeKey] = useState(0)
+  const { pathname } = useLocation()
+  const isLocationGallery = pathname.startsWith('/location/')
 
   return (
     <>
@@ -27,7 +29,7 @@ function App() {
           <Route path="/location/:slug" element={<LocationGallery />} />
         </Routes>
       </main>
-      <Footer />
+      {!isLocationGallery && <Footer />}
     </>
   )
 }
