@@ -141,11 +141,90 @@ const netherlandsLabels = [
   'Friends in Rotterdam',
 ]
 
+const netherlandsDates = [
+  '9 Apr 2026',
+  '23 Mar 2026',
+  '23 Mar 2026',
+  '19 Mar 2026',
+  '11 Apr 2026',
+  '22 Mar 2025',
+  '22 Dec 2024',
+  '5 Jan 2024',
+  '5 Jan 2024',
+  '15 Mar 2025',
+  '21 Dec 2024',
+  '9 Nov 2024',
+  '9 Nov 2024',
+  '16 Nov 2024',
+  '16 Nov 2024',
+  '16 Nov 2024',
+  '5 Apr 2025',
+  '5 Apr 2025',
+  '5 Apr 2025',
+  '5 Apr 2025',
+  '5 Apr 2025',
+  '5 Apr 2025',
+  '30 Mar 2026',
+  '30 Mar 2026',
+  '31 Mar 2026',
+  '30 Mar 2026',
+  '22 Mar 2025',
+  '19 Mar 2026',
+  '22 Dec 2024',
+  '5 Jan 2024',
+  '5 Jan 2024',
+  '5 Jan 2024',
+  '5 Jan 2024',
+  '5 Jan 2024',
+  '16 May 2026',
+]
+
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const netherlandsNamed = [
+  false, // Cherry blossom park path
+  false, // Firethorn berries
+  false, // Cat at the door
+  false, // Underpass, black and white
+  false, // Tulip field
+  false, // Meuse river panorama
+  true, // Bell tower, Roermond
+  false, // Rotterdam train platform
+  false, // Historic boats on the canal
+  true, // Euromast
+  true, // Christmas market, The Hague
+  true, // Chinatown gate, The Hague
+  false, // Street organ
+  false, // Dog window art
+  false, // Autumn canal, Utrecht
+  false, // Shopfront and scooter
+  true, // Inntel Hotel, Zaandam
+  false, // Green houses by the water
+  true, // Flag house, Zaanse Schans
+  true, // Twin windmills, Zaanse Schans
+  false, // Windmill against the skyline
+  false, // Windmill in the green field
+  false, // Hanging flower pots
+  false, // Train tracks
+  false, // Red camellia
+  false, // Traditional house by the canal
+  false, // Cherry blossom park, Maastricht
+  false, // Cyclists, black and white
+  false, // Still life
+  false, // Electric cart
+  false, // On the wall
+  true, // Erasmus Bridge skyline
+  true, // Cube houses, Rotterdam
+  false, // Cheese shop display
+  false, // Friends in Rotterdam
+]
+
 const netherlandsPhotos = netherlandsLabels.map((label, i) => {
   const idx = String(i + 1).padStart(2, '0')
   return {
     id: i + 1,
     label,
+    date: netherlandsDates[i],
+    namedPlace: netherlandsNamed[i],
     src: `${base}photos/netherlands/full/${idx}.jpg`,
     thumb: `${base}photos/netherlands/thumb/${idx}.jpg`,
   }

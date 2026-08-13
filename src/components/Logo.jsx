@@ -36,7 +36,7 @@ function Logo({ size = 'small', className = '', animated = false }) {
           className="logo-word-inner"
           style={animated ? { animationDelay: '1.05s' } : undefined}
         >
-          Wicil<em>Photo</em>
+          Wicil<em>Travel</em>
         </span>
       </span>
     </span>

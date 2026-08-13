@@ -26,7 +26,7 @@ function Home({ introReady = true }) {
   return (
     <section className="home">
       <aside className="sidebar-text">
-        <span>WicilPhoto · 2026</span>
+        <span>WicilTravel · 2026</span>
       </aside>
 
       <div className="home-inner">
