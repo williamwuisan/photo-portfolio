@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import DestinationMap from '../components/DestinationMap'
 import Hero from '../components/Hero'
 import LocationCarousel from '../components/LocationCarousel'
 import LocationList from '../components/LocationList'
@@ -47,9 +48,18 @@ function Home({ introReady = true }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = focusedIndex !== null ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [focusedIndex])
+
   return (
     <div className="home">
       <Hero onExplore={scrollToGallery} />
+
+      <DestinationMap />
 
       <section className="home-gallery" ref={galleryRef}>
         <div className="home-inner">

@@ -818,32 +818,18 @@ const belgiumPhotos = belgiumLabels.map((label, i) => {
 
 export const locations = [
   {
+    slug: 'indonesia',
+    title: 'Indonesia',
+    year: '2025–2026',
+    thumbnail: `${base}photos/indonesia/cover.jpg`,
+    photos: indonesiaPhotos,
+  },
+  {
     slug: 'china',
     title: 'China',
     year: '2025',
     thumbnail: `${base}photos/china/cover.jpg`,
     photos: chinaPhotos,
-  },
-  {
-    slug: 'netherlands',
-    title: 'Netherlands',
-    year: '2025',
-    thumbnail: `${base}photos/netherlands/cover.jpg`,
-    photos: netherlandsPhotos,
-  },
-  {
-    slug: 'prague',
-    title: 'Prague',
-    year: '2024',
-    thumbnail: `${base}photos/prague/cover.jpg`,
-    photos: praguePhotos,
-  },
-  {
-    slug: 'paris',
-    title: 'Paris',
-    year: '2025',
-    thumbnail: `${base}photos/paris/cover.jpg`,
-    photos: parisPhotos,
   },
   {
     slug: 'denmark',
@@ -853,25 +839,11 @@ export const locations = [
     photos: denmarkPhotos,
   },
   {
-    slug: 'hungary',
-    title: 'Hungary',
+    slug: 'netherlands',
+    title: 'Netherlands',
     year: '2025',
-    thumbnail: `${base}photos/hungary/cover.jpg`,
-    photos: hungaryPhotos,
-  },
-  {
-    slug: 'germany',
-    title: 'Germany',
-    year: '2024–2026',
-    thumbnail: `${base}photos/germany/cover.jpg`,
-    photos: germanyPhotos,
-  },
-  {
-    slug: 'indonesia',
-    title: 'Indonesia',
-    year: '2025–2026',
-    thumbnail: `${base}photos/indonesia/cover.jpg`,
-    photos: indonesiaPhotos,
+    thumbnail: `${base}photos/netherlands/cover.jpg`,
+    photos: netherlandsPhotos,
   },
   {
     slug: 'belgium',
@@ -879,5 +851,33 @@ export const locations = [
     year: '2024',
     thumbnail: `${base}photos/belgium/cover.jpg`,
     photos: belgiumPhotos,
+  },
+  {
+    slug: 'paris',
+    title: 'Paris',
+    year: '2025',
+    thumbnail: `${base}photos/paris/cover.jpg`,
+    photos: parisPhotos,
+  },
+  {
+    slug: 'hungary',
+    title: 'Hungary',
+    year: '2025',
+    thumbnail: `${base}photos/hungary/cover.jpg`,
+    photos: hungaryPhotos,
+  },
+  {
+    slug: 'prague',
+    title: 'Prague',
+    year: '2024',
+    thumbnail: `${base}photos/prague/cover.jpg`,
+    photos: praguePhotos,
+  },
+  {
+    slug: 'germany',
+    title: 'Germany',
+    year: '2024–2026',
+    thumbnail: `${base}photos/germany/cover.jpg`,
+    photos: germanyPhotos,
   },
 ]
