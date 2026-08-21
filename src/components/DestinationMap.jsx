@@ -24,21 +24,24 @@ function DestinationMap() {
       </div>
 
       <div className="destination-map-canvas">
-        <div className="destination-map-zoom">
-          <img src={mapImage} alt="" className="destination-map-img" />
-          {destinations.map((dest) => (
-            <Link
-              key={dest.slug}
-              to={`/location/${dest.slug}`}
-              className="destination-dot"
-              style={project(dest.lat, dest.lon)}
-            >
-              <span className="destination-dot-ping" />
-              <span className="destination-dot-core" />
-              <span className="destination-dot-label">{dest.title}</span>
-            </Link>
-          ))}
+        <div className="destination-map-cover">
+          <div className="destination-map-zoom">
+            <img src={mapImage} alt="" className="destination-map-img" />
+            {destinations.map((dest) => (
+              <Link
+                key={dest.slug}
+                to={`/location/${dest.slug}`}
+                className="destination-dot"
+                style={project(dest.lat, dest.lon)}
+              >
+                <span className="destination-dot-ping" />
+                <span className="destination-dot-core" />
+                <span className="destination-dot-label">{dest.title}</span>
+              </Link>
+            ))}
+          </div>
         </div>
+        <span className="destination-map-fade-top" aria-hidden="true" />
         <span className="destination-map-fade" aria-hidden="true" />
       </div>
     </section>
