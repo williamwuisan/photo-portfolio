@@ -673,6 +673,58 @@ const germanyPhotos = germanyLabels.map((label, i) => {
   }
 })
 
+const indonesiaLabels = [
+  'Ulun Danu Beratan Temple',
+  'Sunset over the beach',
+  'Fishing boats at sunset',
+  'Kawah Ijen crater',
+  'Friends at the crater rim',
+  'Kawah Ijen at sunrise',
+  'Sulfur vents detail',
+  'Kawah Ijen panorama',
+  'Corgi at home',
+  'Corgi portrait',
+]
+
+const indonesiaDates = [
+  '5 Sep 2025',
+  '6 Sep 2025',
+  '6 Sep 2025',
+  '1 Jun 2026',
+  '1 Jun 2026',
+  '1 Jun 2026',
+  '1 Jun 2026',
+  '1 Jun 2026',
+  '18 May 2026',
+  '18 May 2026',
+]
+
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const indonesiaNamed = [
+  true, // Ulun Danu Beratan Temple
+  false, // Sunset over the beach
+  false, // Fishing boats at sunset
+  true, // Kawah Ijen crater
+  false, // Friends at the crater rim
+  true, // Kawah Ijen at sunrise
+  false, // Sulfur vents detail
+  true, // Kawah Ijen panorama
+  false, // Corgi at home
+  false, // Corgi portrait
+]
+
+const indonesiaPhotos = indonesiaLabels.map((label, i) => {
+  const idx = String(i + 1).padStart(2, '0')
+  return {
+    id: i + 1,
+    label,
+    date: indonesiaDates[i],
+    namedPlace: indonesiaNamed[i],
+    src: `${base}photos/indonesia/full/${idx}.jpg`,
+    thumb: `${base}photos/indonesia/thumb/${idx}.jpg`,
+  }
+})
+
 export const locations = [
   {
     slug: 'china',
@@ -722,6 +774,13 @@ export const locations = [
     year: '2024–2026',
     thumbnail: `${base}photos/germany/cover.jpg`,
     photos: germanyPhotos,
+  },
+  {
+    slug: 'indonesia',
+    title: 'Indonesia',
+    year: '2025–2026',
+    thumbnail: `${base}photos/indonesia/cover.jpg`,
+    photos: indonesiaPhotos,
   },
   { slug: 'bali', title: 'Bali', year: '2024', photoCount: 4 },
   { slug: 'yogyakarta', title: 'Yogyakarta', year: '2024', photoCount: 3 },
