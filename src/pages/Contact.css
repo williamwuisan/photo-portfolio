@@ -89,7 +89,7 @@
   font-size: 0.95rem;
   padding: 0.4rem 0 0.6rem;
   resize: none;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact-field input::placeholder,
@@ -119,8 +119,8 @@
   letter-spacing: 0.02em;
   cursor: pointer;
   transition:
-    background 0.3s ease,
-    transform 0.3s ease;
+    background 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact-submit:hover {
@@ -129,7 +129,7 @@
 }
 
 .contact-submit-icon {
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .contact-submit:hover .contact-submit-icon {

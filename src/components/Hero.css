@@ -68,8 +68,8 @@
   letter-spacing: 0.03em;
   cursor: pointer;
   transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-btn:hover {
@@ -79,7 +79,7 @@
 
 .hero-btn-icon {
   font-size: 0.85rem;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero-btn:hover .hero-btn-icon {

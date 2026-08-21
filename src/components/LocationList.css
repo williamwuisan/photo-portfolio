@@ -21,7 +21,7 @@
   transition:
     opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.3s ease;
+    border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .location-item.is-visible {
@@ -40,8 +40,8 @@
   object-fit: cover;
   filter: grayscale(0.15);
   transition:
-    filter 0.4s ease,
-    transform 0.6s ease;
+    filter 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .location-item:hover .location-item-img {

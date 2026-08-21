@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   background: var(--bg);
-  transition: opacity 0.65s ease;
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .intro-overlay.is-leaving {
