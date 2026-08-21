@@ -725,6 +725,97 @@ const indonesiaPhotos = indonesiaLabels.map((label, i) => {
   }
 })
 
+const belgiumLabels = [
+  'Windmill on the hill',
+  'Canal at golden hour',
+  'Statue in a niche',
+  'City gate at dusk',
+  'Markt Square at night',
+  'Belfry of Bruges',
+  'Gilded relief detail',
+  'Markt Square',
+  'Chocolate shop display',
+  'Tintin figurine',
+  'Church of Our Lady from the canal',
+  'Church of Our Lady spire',
+  'Church of Our Lady',
+  'Old town street at dusk',
+  'Belfry at night',
+  'Snoopy in the window',
+  'The Ghent Altarpiece',
+  'Smurfs display',
+  'Ghent Belfry',
+  'Ghent old town street',
+  'Dinosaur skeleton exhibit',
+  'Manneken Pis',
+  'Brussels Town Hall, Grand Place',
+]
+
+const belgiumDates = [
+  '26 Oct 2024',
+  '26 Oct 2024',
+  '26 Oct 2024',
+  '26 Oct 2024',
+  '26 Oct 2024',
+  '27 Oct 2024',
+  '27 Oct 2024',
+  '27 Oct 2024',
+  '27 Oct 2024',
+  '27 Oct 2024',
+  '27 Oct 2024',
+  '27 Oct 2024',
+  '27 Oct 2024',
+  '28 Oct 2024',
+  '28 Oct 2024',
+  '28 Oct 2024',
+  '29 Oct 2024',
+  '30 Oct 2024',
+  '31 Oct 2024',
+  '31 Oct 2024',
+  '1 Nov 2024',
+  '1 Nov 2024',
+  '1 Nov 2024',
+]
+
+// false = the exact spot isn't confidently identified (generic/detail shot) — hide the location stamp, keep the date only
+const belgiumNamed = [
+  false, // Windmill on the hill
+  false, // Canal at golden hour
+  false, // Statue in a niche
+  false, // City gate at dusk
+  true, // Markt Square at night
+  true, // Belfry of Bruges
+  false, // Gilded relief detail
+  true, // Markt Square
+  false, // Chocolate shop display
+  false, // Tintin figurine
+  true, // Church of Our Lady from the canal
+  true, // Church of Our Lady spire
+  true, // Church of Our Lady
+  false, // Old town street at dusk
+  true, // Belfry at night
+  false, // Snoopy in the window
+  true, // The Ghent Altarpiece
+  false, // Smurfs display
+  true, // Ghent Belfry
+  false, // Ghent old town street
+  false, // Dinosaur skeleton exhibit
+  true, // Manneken Pis
+  true, // Brussels Town Hall, Grand Place
+]
+
+const belgiumPhotos = belgiumLabels.map((label, i) => {
+  const idx = String(i + 1).padStart(2, '0')
+  return {
+    id: i + 1,
+    label,
+    date: belgiumDates[i],
+    namedPlace: belgiumNamed[i],
+    src: `${base}photos/belgium/full/${idx}.jpg`,
+    thumb: `${base}photos/belgium/thumb/${idx}.jpg`,
+  }
+})
+
 export const locations = [
   {
     slug: 'china',
@@ -782,6 +873,11 @@ export const locations = [
     thumbnail: `${base}photos/indonesia/cover.jpg`,
     photos: indonesiaPhotos,
   },
-  { slug: 'bali', title: 'Bali', year: '2024', photoCount: 4 },
-  { slug: 'yogyakarta', title: 'Yogyakarta', year: '2024', photoCount: 3 },
+  {
+    slug: 'belgium',
+    title: 'Belgium',
+    year: '2024',
+    thumbnail: `${base}photos/belgium/cover.jpg`,
+    photos: belgiumPhotos,
+  },
 ]
